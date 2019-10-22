@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pais>
+  <departamento>
+    <ciudad>Neiva</ciudad>
+  </departamento>
+  <departamento>
+    <ciudad>Antioquia</ciudad>
+  </departamento>
+  <departamento>
+    <ciudad>Bogotá</ciudad>
+  </departamento>
+</pais>

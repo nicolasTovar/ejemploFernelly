@@ -4,18 +4,22 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace Software
 {
     public partial class Fernelly : System.Web.UI.Page
     {
-       
-        string nombre,apellidos,telefono,correo,direccion,fecha;
+     
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-
+                DataSet data = new DataSet();
+                data.ReadXml(Server.MapPath("drop.xml"));
+                ddlCiudad.DataSource = data;
+                ddlCiudad.DataTextField = "ciudad";
+                ddlCiudad.DataBind();
             }
 
 
@@ -46,6 +50,18 @@ namespace Software
             Session["correo"] = txtCorreo.Text;
             Session["direccion"] = txtDireccion.Text;
             Session["fecha"] = txtFecha.Text;
+
+            Session["combo"] = ddlCiudad.SelectedItem.ToString();
+
+            if (rbNatural.Checked == true)
+            {
+                Session["persona"] = "Persona natural";
+            }
+            if (rbJuridica.Checked == true)
+            {
+
+                Session["persona"] = "persona juridica";
+            }
             Response.Redirect("Mostrar.aspx");
         }
     }

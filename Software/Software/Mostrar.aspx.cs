@@ -17,6 +17,8 @@ namespace Software
             txtCorreo.Text=Session["correo"].ToString();
             txtDireccion.Text=Session["direccion"].ToString();
             txtFecha.Text=Session["fecha"].ToString();
+            txtradio.Text = Session["persona"].ToString();
+            txtcombo.Text = Session["combo"].ToString();
 
         }
 
